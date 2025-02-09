@@ -1,0 +1,57 @@
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between; /* Spaces out content */
+    align-items: center;
+    padding: 0 5%; /* Adjust spacing from sides */
+    color: white;
+    overflow: hidden;
+  }
+  
+  .hero-text {
+    flex: 1;
+    text-align: left; /* Align text to the left */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: fadeInUp 1.5s ease-in-out;
+    line-height: 1.2;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    animation: fadeInUp 2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+  }
+  
+  /* The 3D scene container */
+  .hero-3d {
+    flex: 1; /* Takes half of the screen */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
