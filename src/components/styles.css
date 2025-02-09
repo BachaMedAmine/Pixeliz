@@ -1,0 +1,11 @@
+html {
+    scroll-behavior: smooth; /* Enables native smooth scrolling */
+  }
+  
+  section {
+    min-height: 100vh; /* Ensures sections are large enough to scroll to */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px; /* Prevents navbar from covering section */
+  }

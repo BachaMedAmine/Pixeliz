@@ -1,17 +1,26 @@
 .navbar {
     position: fixed;
-    width: 100%;
     top: 0;
-    left: 0;
-    padding: 15px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.85);
-    transition: transform 0.3s ease-in-out;
-    z-index: 100;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    text-align: center;
   }
   
-  .navbar.hidden {
-    transform: translateY(-100%);
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+  
+  .navbar a:hover {
+    color: #FFD700;
   }
