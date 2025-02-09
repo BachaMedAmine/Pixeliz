@@ -5,7 +5,8 @@
     background: rgba(0, 0, 0, 0.8);
     padding: 10px;
     text-align: center;
-  }
+    z-index: 10000; /* Super high to be above everything */
+}
   
   .navbar ul {
     list-style: none;

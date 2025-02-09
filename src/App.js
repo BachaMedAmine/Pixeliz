@@ -12,11 +12,29 @@ function App() {
     <div>
       <VideoBackground />
       <Navbar />
-      <section id="home"><HeroSection /></section>
-      <section id="services"><Services /></section>
-      <section id="gallery"><Gallery /></section>
-      <section id="about"><About /></section>
-      <section id="contact"><Contact /></section>
+       {/* Home Section */}
+       <section id="home"><HeroSection /></section>
+
+{/* Services Section */}
+<section id="services"><Services /></section>
+
+{/* Gallery Section (Prevent Empty Space) */}
+<section id="gallery">
+  <Gallery />
+  <div className="section-placeholder">Gallery Section</div>
+</section>
+
+{/* About Section (Prevent Empty Space) */}
+<section id="about">
+  <About />
+  <div className="section-placeholder">About Section</div>
+</section>
+
+{/* Contact Section (Prevent Empty Space) */}
+<section id="contact">
+  <Contact />
+  <div className="section-placeholder">Contact Section</div>
+</section>
     </div>
   );
 }

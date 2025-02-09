@@ -3,9 +3,15 @@ html {
   }
   
   section {
-    min-height: 100vh; /* Ensures sections are large enough to scroll to */
+    min-height: 100vh; /* Each section is always full screen */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 60px; /* Prevents navbar from covering section */
+    padding-top: 80px; /* Ensures navbar doesn't cover content */
+    position: relative;
+  }
+  .section-placeholder {
+    font-size: 2rem;
+    color: white;
+    opacity: 0.5;
   }
