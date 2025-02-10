@@ -1,15 +1,12 @@
-import React from "react";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const handleScroll = (event, id) => {
-    event.preventDefault(); // Prevents default anchor behavior
+    event.preventDefault(); // Prevent default anchor behavior
     const section = document.getElementById(id);
     if (section) {
-      window.scrollTo({
-        top: section.offsetTop - 50, // Adjust for navbar height
-        behavior: "smooth",
-      });
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -21,6 +18,7 @@ const Navbar = () => {
         <li><a href="#gallery" onClick={(e) => handleScroll(e, "gallery")}>Gallery</a></li>
         <li><a href="#about" onClick={(e) => handleScroll(e, "about")}>About</a></li>
         <li><a href="#contact" onClick={(e) => handleScroll(e, "contact")}>Contact</a></li>
+        <li><Link to="/join">Join Us</Link></li> {/* Navigates to a separate page */}
       </ul>
     </nav>
   );

@@ -1,0 +1,106 @@
+/* Main Page Layout */
+.join-page {
+    display: flex;
+    height: 100vh;
+    background: black; /* Pure Black Background */
+}
+
+/* Left Image Section */
+.join-image {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.join-image img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 15px;
+   
+}
+
+/* Right Form Section */
+.join-form {
+    width: 50%;
+    padding: 40px;
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8); /* Dark Transparent Background */
+   
+}
+
+/* Title */
+.join-form h2 {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 1.5px;
+    color: #FFD700;
+}
+
+/* Subtitle */
+.join-form p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #ddd;
+    text-align: center;
+}
+
+/* Input Field */
+.input-container {
+    width: 80%;
+    margin-bottom: 15px;
+}
+
+.input-container input,
+.input-container textarea {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.input-container input::placeholder,
+.input-container textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.input-container input:focus,
+.input-container textarea:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+/* Stylish Button */
+.join-button {
+    background: linear-gradient(45deg, #FFD700, #FF8C00);
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.join-button:hover {
+    background: linear-gradient(45deg, #FF8C00, #FFD700);
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px rgba(255, 165, 0, 0.8);
+}

@@ -1,11 +1,12 @@
 import React from "react";
+import "../styles/About.css"; // Ensure you create an About.css file for styling
 
 const About = () => {
   return (
-    <div>
-      <h2>About Us</h2>
-      <p>We create immersive LED billboard technology.</p>
-    </div>
+    <section id="about" className="about-section">
+      <h2>À propos de Pixeliz</h2>
+      <p>Pixeliz est reconnu pour son expertise en matière de projection, de sonorisation et de la lumière.</p>
+    </section>
   );
 };
 

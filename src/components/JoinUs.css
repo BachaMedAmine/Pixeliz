@@ -1,0 +1,12 @@
+#join {
+    padding: 50px 0;
+    background-color: black;
+    text-align: center;
+  }
+  
+  .join-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }

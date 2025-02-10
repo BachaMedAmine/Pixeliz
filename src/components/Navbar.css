@@ -25,3 +25,19 @@
   .navbar a:hover {
     color: #FFD700;
   }
+
+  .join-us-btn {
+    background-color: #ffcc00;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    color: black;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  
+  .join-us-btn:hover {
+    background-color: #ff9900;
+  }
