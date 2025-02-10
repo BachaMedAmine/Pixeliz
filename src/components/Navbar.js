@@ -1,5 +1,6 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import logo from "../assets/images/PixelizLogo.jpg";
 
 const Navbar = () => {
   const handleScroll = (event, id) => {
@@ -12,7 +13,13 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <ul>
+      {/* Logo Section */}
+      <div className="logo-container">
+        <img src={logo} alt="Pixeliz Logo" className="navbar-logo" />
+      </div>
+
+      {/* Navigation Links */}
+      <ul className="nav-links">
         <li><a href="#home" onClick={(e) => handleScroll(e, "home")}>Home</a></li>
         <li><a href="#services" onClick={(e) => handleScroll(e, "services")}>Services</a></li>
         <li><a href="#gallery" onClick={(e) => handleScroll(e, "gallery")}>Gallery</a></li>

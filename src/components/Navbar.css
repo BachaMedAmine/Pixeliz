@@ -1,43 +1,46 @@
 .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center everything initially */
+    padding: 15px 30px;
+    background-color: black;
     position: fixed;
-    top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 10px;
-    text-align: center;
-    z-index: 10000; /* Super high to be above everything */
-}
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
   
-  .navbar ul {
+  .logo-container {
+    position: absolute;
+    left: 30px; /* Keep the logo on the left */
+  }
+  
+  .navbar-logo {
+    height: 90px; /* Adjust size */
+    width: auto;
+    object-fit: contain;
+  }
+  
+  .nav-links {
     list-style: none;
     display: flex;
-    justify-content: center;
     gap: 20px;
+    justify-content: center; /* Center links */
   }
   
-  .navbar a {
-    text-decoration: none;
+  .nav-links li {
+    display: inline;
+  }
+  
+  .nav-links a, .nav-links Link {
     color: white;
+    text-decoration: none;
     font-size: 18px;
-    transition: color 0.3s;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
   }
   
-  .navbar a:hover {
-    color: #FFD700;
-  }
-
-  .join-us-btn {
-    background-color: #ffcc00;
-    border: none;
-    padding: 10px 15px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: 0.3s;
-    color: black;
-    border-radius: 5px;
-    margin-left: 10px;
-  }
-  
-  .join-us-btn:hover {
-    background-color: #ff9900;
+  .nav-links a:hover, .nav-links Link:hover {
+    color: #FFD700; /* Gold effect on hover */
   }
