@@ -1,6 +1,5 @@
 .services-section {
   padding: 80px 20px;
-  background: black;
   color: white;
   text-align: center;
 }
@@ -23,24 +22,28 @@
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 10px;
+  color: #c9a227; /* Dark Yellow */
 }
 
 .services-description {
   font-size: 1.1rem;
   margin-bottom: 20px;
   opacity: 0.8;
+  color: #d1d1d1; /* Dark White */
 }
 
 .service-title {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin-top: 20px;
+  color: #165a8f; /* Dark blue */
 }
 
 .service-description {
   font-size: 1.1rem;
   margin-bottom: 15px;
   opacity: 0.9;
+  color: #d1d1d1; /* Dark White */
 }
 
 .service-features {
@@ -51,6 +54,7 @@
 .service-features li {
   margin-bottom: 5px;
   text-align: left;
+  color: #d1d1d1; /* Dark White */
 }
 
 .services-image {
