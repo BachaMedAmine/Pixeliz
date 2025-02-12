@@ -1,33 +1,40 @@
-import "./Navbar.css";
+import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/PixelizLogo.jpg";
+import "./Navbar.css";
+import logo from "../assets/images/PixelizLogo.jpg"; // Adjust the path if needed
 
 const Navbar = () => {
-  const handleScroll = (event, id) => {
-    event.preventDefault(); // Prevent default anchor behavior
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   return (
-    <nav className="navbar">
-      {/* Logo Section */}
-      <div className="logo-container">
-        <img src={logo} alt="Pixeliz Logo" className="navbar-logo" />
+    <div>
+      {/* Top Contact Bar */}
+      <div className="top-bar">
+        <div className="contact-info">
+          <span className="icon">🌍</span> Mbjgroup.tn
+          <span className="icon">📞</span> +216-97 111 001
+          <span className="icon">✉️</span> mbjgroup@gmail.com
+        </div>
       </div>
 
-      {/* Navigation Links */}
-      <ul className="nav-links">
-        <li><a href="#home" onClick={(e) => handleScroll(e, "home")}>Home</a></li>
-        <li><a href="#services" onClick={(e) => handleScroll(e, "services")}>Services</a></li>
-        <li><a href="#gallery" onClick={(e) => handleScroll(e, "gallery")}>Gallery</a></li>
-        <li><a href="#about" onClick={(e) => handleScroll(e, "about")}>About</a></li>
-        <li><a href="#contact" onClick={(e) => handleScroll(e, "contact")}>Contact</a></li>
-        <li><Link to="/join">Join Us</Link></li> {/* Navigates to a separate page */}
-      </ul>
-    </nav>
+      {/* Navigation Bar */}
+      <nav className="navbar">
+        {/* Logo on the left */}
+        <div className="nav-logo">
+          <img src={logo} alt="Pixeliz Logo" />
+        </div>
+
+        {/* Navigation Links in the center */}
+        <div className="nav-center">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><Link to="/join">Join Us</Link></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
   );
 };
 

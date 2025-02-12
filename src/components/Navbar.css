@@ -1,46 +1,62 @@
+/* Top Contact Bar */
+.top-bar {
+  background-color: #000; /* Black background */
+  color: white;
+  padding: 5px 20px;
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-end; /* Align to the right */
+  align-items: center;
+  gap: 15px;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-info .icon {
+  font-size: 16px;
+}
+
+/* Navbar Styling */
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center everything initially */
-    padding: 15px 30px;
-    background-color: black;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
-  
-  .logo-container {
-    position: absolute;
-    left: 30px; /* Keep the logo on the left */
-  }
-  
-  .navbar-logo {
-    height: 90px; /* Adjust size */
-    width: auto;
-    object-fit: contain;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    justify-content: center; /* Center links */
-  }
-  
-  .nav-links li {
-    display: inline;
-  }
-  
-  .nav-links a, .nav-links Link {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .nav-links a:hover, .nav-links Link:hover {
-    color: #FFD700; /* Gold effect on hover */
-  }
+  background-color: black;
+  display: flex;
+  justify-content: space-between; /* Space between logo, nav links, and contact */
+  align-items: center;
+  padding: 15px 20px;
+}
+
+/* Logo Styling */
+.nav-logo img {
+  height: 40px; /* Adjust based on design */
+  width: auto;
+}
+
+/* Navigation Links */
+.navbar .nav-center {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #ff9900; /* Highlight color */
+}
