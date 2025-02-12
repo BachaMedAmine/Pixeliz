@@ -8,6 +8,10 @@ import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import JoinForm from "./pages/JoinForm";
+
+import MapComponent from "./components/MapSection"; // Import MapComponent
+import "leaflet/dist/leaflet.css"; // Import Leaflet CSS for proper rendering
+
 // import IntroScreen from "./components/IntroScreen"; // Commented out for now
 
 function App() {
@@ -44,7 +48,10 @@ function App() {
                 <section id="services">
                   <Services />
                 </section>
-
+                {/* Map Section Below Services */}
+                <section id="map">
+                   <MapComponent />
+                </section>
                 {/* Gallery Section */}
                 <section id="gallery">
                   <Gallery />

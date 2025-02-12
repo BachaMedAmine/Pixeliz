@@ -6,7 +6,7 @@ const Contact = () => {
     <section id="contact" className="contact-section">
       <h2>Contactez-nous</h2>
       <p><strong>Email:</strong> <a href="pixeliz.tunis@gmail.com">pixeliz.tunis@gmail.com</a></p>
-      <p><strong>Téléphone:</strong> <a href="tel:+21697111001">+216 99 123 456</a></p>
+      <p><strong>Téléphone:</strong> <a href="tel:+21697111001">+216 97 111 001</a></p>
       <p><strong>Adresse:</strong> Tunis, Tunisia</p>
     </section>
   );

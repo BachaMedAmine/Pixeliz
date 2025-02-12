@@ -9,9 +9,9 @@ const Navbar = () => {
       {/* Top Contact Bar */}
       <div className="top-bar">
         <div className="contact-info">
-          <span className="icon">🌍</span> Mbjgroup.tn
+          
           <span className="icon">📞</span> +216-97 111 001
-          <span className="icon">✉️</span> mbjgroup@gmail.com
+          <span className="icon">✉️</span> pixeliz.tunis@gmail.com
         </div>
       </div>
 
