@@ -58,8 +58,8 @@ const ledServices = [
   },
 ];
 
-// Sound & Lighting Services
-const soundLightingServices = [
+// Sound Services
+const soundServices = [
   {
     id: 5,
     title: "Professional Sound Systems",
@@ -73,6 +73,10 @@ const soundLightingServices = [
       "Wireless and multi-zone capabilities",
     ],
   },
+];
+
+// Lighting Services
+const lightingServices = [
   {
     id: 6,
     title: "Advanced Lighting Solutions",
@@ -90,9 +94,8 @@ const soundLightingServices = [
 
 const Services = () => {
   const [activeLEDService, setActiveLEDService] = useState(ledServices[0]);
-  const [activeSoundLightService, setActiveSoundLightService] = useState(
-    soundLightingServices[0]
-  );
+  const [activeSoundService, setActiveSoundService] = useState(soundServices[0]);
+  const [activeLightingService, setActiveLightingService] = useState(lightingServices[0]);
 
   return (
     <section id="services">
@@ -154,27 +157,27 @@ const Services = () => {
         </div>
       </div>
 
-      {/* Sound & Lighting Section */}
+      {/* Sound Systems Section */}
       <div className="services-section">
         <div className="services-container">
           <div className="services-text">
-            <h2 className="services-title">Sound & Lighting Solutions</h2>
+            <h2 className="services-title">Sound Systems</h2>
             <p className="services-description">
-              High-quality sound and lighting systems to enhance any event or venue.
+              High-quality sound systems to enhance any event or venue with superior audio clarity.
             </p>
             <AnimatePresence mode="wait">
               <motion.div
-                key={activeSoundLightService.id}
+                key={activeSoundService.id}
                 className="service-details"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 50 }}
                 transition={{ duration: 0.5 }}
               >
-                <h3 className="service-title">{activeSoundLightService.title}</h3>
-                <p className="service-description">{activeSoundLightService.description}</p>
+                <h3 className="service-title">{activeSoundService.title}</h3>
+                <p className="service-description">{activeSoundService.description}</p>
                 <ul className="service-features">
-                  {activeSoundLightService.features.map((feature, index) => (
+                  {activeSoundService.features.map((feature, index) => (
                     <li key={index}>• {feature}</li>
                   ))}
                 </ul>
@@ -183,32 +186,60 @@ const Services = () => {
           </div>
 
           <div className="services-image">
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={activeSoundLightService.image}
-                src={activeSoundLightService.image}
-                alt={activeSoundLightService.title}
-                className="service-img"
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                transition={{ duration: 0.5 }}
-              />
-            </AnimatePresence>
+            <motion.img
+              key={activeSoundService.image}
+              src={activeSoundService.image}
+              alt={activeSoundService.title}
+              className="service-img"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.5 }}
+            />
           </div>
         </div>
+      </div>
 
-        <div className="services-navigation">
-          {soundLightingServices.map((service) => (
-            <motion.button
-              key={service.id}
-              className={`service-btn ${activeSoundLightService.id === service.id ? "active" : ""}`}
-              onClick={() => setActiveSoundLightService(service)}
-              whileHover={{ scale: 1.1 }}
-            >
-              {service.title}
-            </motion.button>
-          ))}
+      {/* Lighting Solutions Section */}
+      <div className="services-section">
+        <div className="services-container">
+          <div className="services-text">
+            <h2 className="services-title">Lighting Solutions</h2>
+            <p className="services-description">
+              Advanced lighting solutions designed for stage, events, and architectural brilliance.
+            </p>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeLightingService.id}
+                className="service-details"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 50 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h3 className="service-title">{activeLightingService.title}</h3>
+                <p className="service-description">{activeLightingService.description}</p>
+                <ul className="service-features">
+                  {activeLightingService.features.map((feature, index) => (
+                    <li key={index}>• {feature}</li>
+                  ))}
+                </ul>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          <div className="services-image">
+            <motion.img
+              key={activeLightingService.image}
+              src={activeLightingService.image}
+              alt={activeLightingService.title}
+              className="service-img"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.5 }}
+            />
+          </div>
         </div>
       </div>
     </section>
