@@ -20,10 +20,8 @@ const HeroSection = () => {
         </p>
       </div>
 
-      {/* Right Side: 3D Scene */}
-      <div className="hero-3d">
-        <ThreeDScene />
-      </div>
+      
+     
     </section>
   );
 };

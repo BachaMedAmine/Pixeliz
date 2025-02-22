@@ -36,14 +36,7 @@
     line-height: 1.5;
   }
   
-  /* The 3D scene container */
-  .hero-3d {
-    flex: 1; /* Takes half of the screen */
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
   
   @keyframes fadeInUp {
     from {

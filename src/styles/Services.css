@@ -3,14 +3,16 @@
   text-align: center;
   display: flex;
   justify-content: center;
+  background-size: cover;
 }
 
 .service-card {
-  max-width: 1200px;
+  max-width: 12000px;
   width: 90%;
   padding: 40px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+  
+  background: linear-gradient(to bottom, #7a2c00, #b34700, #ff5500);/* Semi-transparent */
   backdrop-filter: blur(20px); /* Stronger blur effect */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);

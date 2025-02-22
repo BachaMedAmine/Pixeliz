@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import VideoBackground from "./components/VideoBackground";
 import HeroSection from "./components/HeroSection";
@@ -8,72 +8,75 @@ import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import JoinForm from "./pages/JoinForm";
+import MapComponent from "./components/MapSection";
+import "leaflet/dist/leaflet.css";
 
-import MapComponent from "./components/MapSection"; // Import MapComponent
-import "leaflet/dist/leaflet.css"; // Import Leaflet CSS for proper rendering
+// Smooth Scroll to Sections
+const ScrollToTop = () => {
+  const { pathname, hash } = useLocation();
 
-// import IntroScreen from "./components/IntroScreen"; // Commented out for now
+  useEffect(() => {
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [pathname, hash]);
+
+  return null;
+};
 
 function App() {
-  // const [showIntro, setShowIntro] = useState(true);
-
-  // // Auto-hide intro after 28 seconds
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setShowIntro(false);
-  //   }, 28000);
-  //   return () => clearTimeout(timer);
-  // }, []);
-
   return (
     <Router>
-      {/* {showIntro ? (
-        <IntroScreen onSkip={() => setShowIntro(false)} />
-      ) : ( */}
-        <Routes>
-          {/* Main Page */}
-          <Route
-            path="/"
-            element={
-              <div>
-                <VideoBackground />
-                <Navbar />
+      <ScrollToTop />
+      <Navbar />
 
-                {/* Home Section */}
-                <section id="home">
-                  <HeroSection />
-                </section>
+      <Routes>
+        {/* Home Page (Only Home Has Video Background) */}
+        <Route
+          path="/"
+          element={
+            <div>
+              <VideoBackground />
+              <section id="home">
+                <HeroSection />
+              </section>
 
-                {/* Services Section */}
-                <section id="services">
-                  <Services />
-                </section>
-                {/* Map Section Below Services */}
-                <section id="map">
-                   <MapComponent />
-                </section>
-                {/* Gallery Section */}
-                <section id="gallery">
-                  <Gallery />
-                </section>
+              {/* Services Section */}
+              <section id="services">
+                <Services />
+              </section>
 
-                {/* About Section */}
-                <section id="about">
-                  <About />
-                </section>
+              {/* Map Section Below Services */}
+              <section id="map">
+                <MapComponent />
+              </section>
 
-                {/* Contact Section */}
-                <section id="contact">
-                  <Contact />
-                </section>
-              </div>
-            }
-          />
+              {/* Gallery Section */}
+              <section id="gallery">
+                <Gallery />
+              </section>
 
-          {/* Separate Join Page */}
-          <Route path="/join" element={<JoinForm />} />
-        </Routes>
-      {/* )} */}
+              {/* About Section */}
+              <section id="about">
+                <About />
+              </section>
+
+              {/* Contact Section */}
+              <section id="contact">
+                <Contact />
+              </section>
+            </div>
+          }
+        />
+
+        {/* Separate Join Page */}
+        <Route path="/join" element={<JoinForm />} />
+      </Routes>
     </Router>
   );
 }
