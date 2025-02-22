@@ -99,36 +99,36 @@ const Services = () => {
 
   return (
     <section id="services">
-      {/* LED Displays Section */}
+      {/* LED Display Section */}
       <div className="services-section">
-        <div className="services-container">
-          <div className="services-text">
-            <h2 className="services-title">LED Display Solutions</h2>
-            <p className="services-description">
-              High-quality LED displays designed to deliver stunning visuals and reliable performance.
-            </p>
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeLEDService.id}
-                className="service-details"
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 50 }}
-                transition={{ duration: 0.5 }}
-              >
-                <h3 className="service-title">{activeLEDService.title}</h3>
-                <p className="service-description">{activeLEDService.description}</p>
-                <ul className="service-features">
-                  {activeLEDService.features.map((feature, index) => (
-                    <li key={index}>• {feature}</li>
-                  ))}
-                </ul>
-              </motion.div>
-            </AnimatePresence>
-          </div>
+        <div className="service-card">
+          <div className="services-container">
+            <div className="services-text">
+              <h2 className="services-title">LED Display Solutions</h2>
+              <p className="services-description">
+                High-quality LED displays designed to deliver stunning visuals and reliable performance.
+              </p>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeLEDService.id}
+                  className="service-details"
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 50 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <h3 className="service-title">{activeLEDService.title}</h3>
+                  <p className="service-description">{activeLEDService.description}</p>
+                  <ul className="service-features">
+                    {activeLEDService.features.map((feature, index) => (
+                      <li key={index}>• {feature}</li>
+                    ))}
+                  </ul>
+                </motion.div>
+              </AnimatePresence>
+            </div>
 
-          <div className="services-image">
-            <AnimatePresence mode="wait">
+            <div className="services-image">
               <motion.img
                 key={activeLEDService.image}
                 src={activeLEDService.image}
@@ -139,106 +139,60 @@ const Services = () => {
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.5 }}
               />
-            </AnimatePresence>
+            </div>
           </div>
-        </div>
 
-        <div className="services-navigation">
-          {ledServices.map((service) => (
-            <motion.button
-              key={service.id}
-              className={`service-btn ${activeLEDService.id === service.id ? "active" : ""}`}
-              onClick={() => setActiveLEDService(service)}
-              whileHover={{ scale: 1.1 }}
-            >
-              {service.title}
-            </motion.button>
-          ))}
+          <div className="services-navigation">
+            {ledServices.map((service) => (
+              <motion.button
+                key={service.id}
+                className={`service-btn ${activeLEDService.id === service.id ? "active" : ""}`}
+                onClick={() => setActiveLEDService(service)}
+                whileHover={{ scale: 1.1 }}
+              >
+                {service.title}
+              </motion.button>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Sound Systems Section */}
       <div className="services-section">
-        <div className="services-container">
-          <div className="services-text">
-            <h2 className="services-title">Sound Systems</h2>
-            <p className="services-description">
-              High-quality sound systems to enhance any event or venue with superior audio clarity.
-            </p>
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeSoundService.id}
-                className="service-details"
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 50 }}
-                transition={{ duration: 0.5 }}
-              >
-                <h3 className="service-title">{activeSoundService.title}</h3>
-                <p className="service-description">{activeSoundService.description}</p>
-                <ul className="service-features">
-                  {activeSoundService.features.map((feature, index) => (
-                    <li key={index}>• {feature}</li>
-                  ))}
-                </ul>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          <div className="services-image">
-            <motion.img
-              key={activeSoundService.image}
-              src={activeSoundService.image}
-              alt={activeSoundService.title}
-              className="service-img"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.5 }}
-            />
+        <div className="service-card">
+          <h2 className="services-title">Sound Systems</h2>
+          <div className="services-container">
+            <div className="services-text">
+              <p className="services-description">{activeSoundService.description}</p>
+              <ul className="service-features">
+                {activeSoundService.features.map((feature, index) => (
+                  <li key={index}>• {feature}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="services-image">
+              <motion.img src={activeSoundService.image} alt={activeSoundService.title} className="service-img" />
+            </div>
           </div>
         </div>
       </div>
 
       {/* Lighting Solutions Section */}
       <div className="services-section">
-        <div className="services-container">
-          <div className="services-text">
-            <h2 className="services-title">Lighting Solutions</h2>
-            <p className="services-description">
-              Advanced lighting solutions designed for stage, events, and architectural brilliance.
-            </p>
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeLightingService.id}
-                className="service-details"
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 50 }}
-                transition={{ duration: 0.5 }}
-              >
-                <h3 className="service-title">{activeLightingService.title}</h3>
-                <p className="service-description">{activeLightingService.description}</p>
-                <ul className="service-features">
-                  {activeLightingService.features.map((feature, index) => (
-                    <li key={index}>• {feature}</li>
-                  ))}
-                </ul>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          <div className="services-image">
-            <motion.img
-              key={activeLightingService.image}
-              src={activeLightingService.image}
-              alt={activeLightingService.title}
-              className="service-img"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.5 }}
-            />
+        <div className="service-card">
+          <h2 className="services-title">Lighting Solutions</h2>
+          <div className="services-container">
+            <div className="services-text">
+              <p className="services-description">{activeLightingService.description}</p>
+              <ul className="service-features">
+                {activeLightingService.features.map((feature, index) => (
+                  <li key={index}>• {feature}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="services-image">
+              <motion.img src={activeLightingService.image} alt={activeLightingService.title} className="service-img" />
+            </div>
           </div>
         </div>
       </div>
