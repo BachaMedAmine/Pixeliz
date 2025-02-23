@@ -62,10 +62,10 @@ const ledServices = [
 const soundServices = [
   {
     id: 5,
-    title: "Professional Sound Systems",
+    title: "Polar 12 Sound System",
     description:
-      "State-of-the-art sound systems for concerts, events, and commercial installations with superior audio quality.",
-    image: "/service5.png",
+      "The Polar 12 consists of a subwoofer and two column elements. It has an integrated four-way mixer, Bluetooth, and comes with padded protective covers.",
+    image: "/hk12.png",
     features: [
       "High-fidelity audio",
       "Custom speaker configurations",
@@ -73,21 +73,47 @@ const soundServices = [
       "Wireless and multi-zone capabilities",
     ],
   },
+  {
+    id: 6,
+    title: "Yamaha MG12 Mixer",
+    description:
+      "A powerful, compact 12-input mixer featuring studio-quality preamps, perfect for live performances, broadcasting, and professional audio setups.",
+    image: "/YamahaMG12.png",
+    features: [
+      "12-channel mixing console",
+      "Studio-quality preamps",
+      "Multi-effects processing",
+      "Flexible connectivity",
+    ],
+  },
 ];
 
 // Lighting Services
 const lightingServices = [
   {
-    id: 6,
-    title: "Advanced Lighting Solutions",
+    id: 7,
+    title: "Stage Lighting Solutions",
     description:
       "Innovative lighting systems to enhance stage productions, architecture, and event experiences.",
-    image: "/service6.png",
+    image: "/stageLight.png",
     features: [
       "Smart lighting controls",
       "LED stage and event lighting",
       "Architectural ambient lighting",
       "DMX and wireless solutions",
+    ],
+  },
+  {
+    id: 8,
+    title: "Beam350 Moving Head",
+    description:
+      "Professional-grade moving head beam light, perfect for concerts, live events, and stage shows, delivering sharp beams and precise movements.",
+    image: "/beam350.png",
+    features: [
+      "High-intensity beam",
+      "DMX & wireless control",
+      "Fast movement & rotation",
+      "Multiple color presets",
     ],
   },
 ];
@@ -163,16 +189,39 @@ const Services = () => {
           <h2 className="services-title">Sound Systems</h2>
           <div className="services-container">
             <div className="services-text">
-              <p className="services-description">{activeSoundService.description}</p>
-              <ul className="service-features">
-                {activeSoundService.features.map((feature, index) => (
-                  <li key={index}>• {feature}</li>
-                ))}
-              </ul>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeSoundService.id}
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 50 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <p className="services-description">{activeSoundService.description}</p>
+                  <ul className="service-features">
+                    {activeSoundService.features.map((feature, index) => (
+                      <li key={index}>• {feature}</li>
+                    ))}
+                  </ul>
+                </motion.div>
+              </AnimatePresence>
             </div>
             <div className="services-image">
               <motion.img src={activeSoundService.image} alt={activeSoundService.title} className="service-img" />
             </div>
+          </div>
+
+          <div className="services-navigation">
+            {soundServices.map((service) => (
+              <motion.button
+                key={service.id}
+                className={`service-btn ${activeSoundService.id === service.id ? "active" : ""}`}
+                onClick={() => setActiveSoundService(service)}
+                whileHover={{ scale: 1.1 }}
+              >
+                {service.title}
+              </motion.button>
+            ))}
           </div>
         </div>
       </div>
@@ -183,12 +232,17 @@ const Services = () => {
           <h2 className="services-title">Lighting Solutions</h2>
           <div className="services-container">
             <div className="services-text">
-              <p className="services-description">{activeLightingService.description}</p>
-              <ul className="service-features">
-                {activeLightingService.features.map((feature, index) => (
-                  <li key={index}>• {feature}</li>
-                ))}
-              </ul>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeLightingService.id}
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 50 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <p className="services-description">{activeLightingService.description}</p>
+                </motion.div>
+              </AnimatePresence>
             </div>
             <div className="services-image">
               <motion.img src={activeLightingService.image} alt={activeLightingService.title} className="service-img" />
