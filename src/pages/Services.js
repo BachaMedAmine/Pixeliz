@@ -77,8 +77,8 @@ const soundServices = [
     id: 6,
     title: "Yamaha MG12 Mixer",
     description:
-      "A powerful, compact 12-input mixer featuring studio-quality preamps, perfect for live performances, broadcasting, and professional audio setups.",
-    image: "/YamahaMG12.png",
+      "Alimentation phantom ou pile Livré avec micro flexible 15' et une bonnetteCellule de type Electret Ultra-Cardioïde Livré avec micro flexible 15”, une bonnette et un câble XLR 5m",
+    image: "/micro1.png",
     features: [
       "12-channel mixing console",
       "Studio-quality preamps",
@@ -86,12 +86,43 @@ const soundServices = [
       "Flexible connectivity",
     ],
   },
+  {
+    id: 7,
+    title: "Micro Pupitre",
+    description:
+      "A high-performance gooseneck microphone with ultra-cardioid electret technology, ideal for conferences, public speaking, and broadcasting applications.",
+    image: "/micro1.png",
+    features: [
+      "Ultra-Cardioid Electret capsule",
+      "Flexible 15-inch gooseneck design",
+      "Includes foam windscreen",
+      "XLR 5m cable for reliable connectivity",
+      "Ideal for podiums, conferences, and speeches",
+      "High sensitivity for clear audio capture",
+      "Durable base with push-to-talk functionality"
+    ],
+  },
+  {
+    id: 8,
+   "title": "Shure BLX288/SM58 Combo M17",
+  "description": "A professional wireless microphone system featuring two legendary SM58 handheld microphones and a BLX288 dual-channel receiver, perfect for live performances, presentations, and events.",
+    image: "/ShureMicro.png",
+    features: [
+      "Dual-channel receiver for two simultaneous microphones",
+    "Industry-standard SM58 vocal microphones with cardioid pickup pattern",
+    "Wireless range up to 91 meters (300 feet)",
+    "QuickScan frequency selection for interference-free operation",
+    "Up to 14 hours of battery life with AA batteries",
+    "Rugged and durable construction for professional use",
+    "Ideal for singers, presenters, and performers"
+    ],
+  },
 ];
 
 // Lighting Services
 const lightingServices = [
   {
-    id: 7,
+    id: 9,
     title: "Stage Lighting Solutions",
     description:
       "Innovative lighting systems to enhance stage productions, architecture, and event experiences.",
@@ -104,7 +135,7 @@ const lightingServices = [
     ],
   },
   {
-    id: 8,
+    id: 10,
     title: "Beam350 Moving Head",
     description:
       "Professional-grade moving head beam light, perfect for concerts, live events, and stage shows, delivering sharp beams and precise movements.",
@@ -192,6 +223,7 @@ const Services = () => {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeSoundService.id}
+                  className="service-details"
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 50 }}
@@ -207,7 +239,16 @@ const Services = () => {
               </AnimatePresence>
             </div>
             <div className="services-image">
-              <motion.img src={activeSoundService.image} alt={activeSoundService.title} className="service-img" />
+              <motion.img
+                key={activeSoundService.image}
+                src={activeSoundService.image}
+                alt={activeSoundService.title}
+                className="service-img"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.5 }}
+              />
             </div>
           </div>
 
@@ -235,6 +276,7 @@ const Services = () => {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeLightingService.id}
+                  className="service-details"
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 50 }}
@@ -245,8 +287,30 @@ const Services = () => {
               </AnimatePresence>
             </div>
             <div className="services-image">
-              <motion.img src={activeLightingService.image} alt={activeLightingService.title} className="service-img" />
+              <motion.img
+                key={activeLightingService.image}
+                src={activeLightingService.image}
+                alt={activeLightingService.title}
+                className="service-img"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.5 }}
+              />
             </div>
+          </div>
+
+          <div className="services-navigation">
+            {lightingServices.map((service) => (
+              <motion.button
+                key={service.id}
+                className={`service-btn ${activeLightingService.id === service.id ? "active" : ""}`}
+                onClick={() => setActiveLightingService(service)}
+                whileHover={{ scale: 1.1 }}
+              >
+                {service.title}
+              </motion.button>
+            ))}
           </div>
         </div>
       </div>
