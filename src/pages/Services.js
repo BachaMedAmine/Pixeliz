@@ -78,7 +78,7 @@ const soundServices = [
     title: "Yamaha MG12 Mixer",
     description:
       "Alimentation phantom ou pile Livré avec micro flexible 15' et une bonnetteCellule de type Electret Ultra-Cardioïde Livré avec micro flexible 15”, une bonnette et un câble XLR 5m",
-    image: "/micro1.png",
+    image: "/YamahaMG12.png",
     features: [
       "12-channel mixing console",
       "Studio-quality preamps",
@@ -126,7 +126,7 @@ const lightingServices = [
     title: "Stage Lighting Solutions",
     description:
       "Innovative lighting systems to enhance stage productions, architecture, and event experiences.",
-    image: "/stageLight.png",
+    image: "/Beam350W.png",
     features: [
       "Smart lighting controls",
       "LED stage and event lighting",
@@ -134,19 +134,7 @@ const lightingServices = [
       "DMX and wireless solutions",
     ],
   },
-  {
-    id: 10,
-    title: "Beam350 Moving Head",
-    description:
-      "Professional-grade moving head beam light, perfect for concerts, live events, and stage shows, delivering sharp beams and precise movements.",
-    image: "/beam350.png",
-    features: [
-      "High-intensity beam",
-      "DMX & wireless control",
-      "Fast movement & rotation",
-      "Multiple color presets",
-    ],
-  },
+  
 ];
 
 const Services = () => {

@@ -1,12 +1,12 @@
 import React from "react";
-import "./JoinForm.css";
+import "./JoinForm.css"; // Import the CSS file
 
 const JoinForm = () => {
   return (
     <div className="join-page">
       {/* Left: Static Image */}
-      <div className="join-image">
-        <img src="/models/Merlin.jpg" alt="Join Us" />
+      <div className="">
+        <img src={`${process.env.PUBLIC_URL}/public/LOOP.jpg`} alt="" />
       </div>
 
       {/* Right: Styled Form */}
