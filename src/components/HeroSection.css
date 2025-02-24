@@ -1,50 +1,79 @@
+/* Main Hero Section */
 .hero {
-    height: 100vh;
-    display: flex;
-    justify-content: space-between; /* Spaces out content */
-    align-items: center;
-    padding: 0 5%; /* Adjust spacing from sides */
-    color: #f54f0e;
-    overflow: hidden;
-  }
-  
-  .hero-text {
-    flex: 1;
-    text-align: left; /* Align text to the left */
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .hero-title {
-    font-size: 4rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    animation: fadeInUp 1.5s ease-in-out;
-    line-height: 1.2;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.5rem;
-    margin-top: 10px;
-    color: rgb(245, 79, 14);
-    animation: fadeInUp 2s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    line-height: 1.5;
-  }
-  
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+/* Video Container */
+.video-container {
+  position: absolute;
+  width: 100%;  /* Change this if you want a smaller width */
+  height: 60vh; /* Adjust height (e.g., change 100vh to 80vh for a shorter video) */
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.video-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures video covers the entire section */
+}
+
+.hidden {
+  display: none;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top: 5px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Navigation Buttons */
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.prev-button {
+  left: 20px;
+}
+
+.next-button {
+  right: 20px;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  background: rgba(255, 255, 255, 0.6);
+}

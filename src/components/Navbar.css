@@ -1,11 +1,11 @@
 /* Top Contact Bar */
 .top-bar {
-  background: linear-gradient(to right, #222, #000); /* Subtle Gradient */
+  background: linear-gradient(to right, #222, #000); 
   color: white;
-  padding: 8px 20px;
+  padding: 8px 40px;
   font-size: 14px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
   align-items: center;
   font-family: 'Poppins', sans-serif;
 }
@@ -17,11 +17,6 @@
   gap: 15px;
 }
 
-.contact-info .icon {
-  font-size: 16px;
-  color: #ff9900;
-}
-
 /* Navbar Styling */
 .navbar {
   background-color: black;
@@ -29,7 +24,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  box-shadow: 0px 4px 10px rgba(255, 153, 0, 0.2); /* Subtle shadow */
+  box-shadow: 0px 4px 10px rgba(255, 153, 0, 0.2);
 }
 
 /* Logo Styling */
@@ -40,7 +35,7 @@
 }
 
 .nav-logo img:hover {
-  transform: scale(1.1); /* Slight zoom on hover */
+  transform: scale(1.1);
 }
 
 /* Navigation Links */
@@ -73,19 +68,29 @@
   border-bottom: 2px solid #f54a06dd;
 }
 
-/* Responsive Navbar */
-@media screen and (max-width: 1024px) {
-  .navbar {
-      flex-direction: column;
-      align-items: center;
-  }
+/* WhatsApp Container */
+.whatsapp-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
-  .nav-logo img {
-      height: 40px;
-  }
+/* WhatsApp Button */
+.whatsapp-link img {
+  height: 30px; 
+  width: auto;
+  transition: transform 0.3s ease;
+}
 
-  .navbar ul {
-      flex-direction: column;
-      gap: 10px;
-  }
+.whatsapp-link img:hover {
+  transform: scale(1.1);
+}
+
+/* WhatsApp Text (Under the Icon) */
+.whatsapp-text {
+  font-size: 12px;
+  color: white;
+  margin-top: 3px;
+  opacity: 0.8;
 }

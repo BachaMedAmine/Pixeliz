@@ -1,5 +1,5 @@
 section {
-  height: 100vh;  /* Makes each section full screen */
+  height: 10vh;  /* Makes each section full screen */
   display: flex;
   align-items: center;
   justify-content: center;

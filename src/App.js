@@ -51,14 +51,14 @@ function App() {
                 <Services />
               </section>
 
-              {/* Map Section Below Services */}
-              <section id="map">
-                <MapComponent />
-              </section>
-
               {/* Gallery Section */}
               <section id="gallery">
                 <Gallery />
+              </section>
+
+              {/* Map Section Below Services */}
+              <section id="map">
+                <MapComponent />
               </section>
 
               {/* About Section */}

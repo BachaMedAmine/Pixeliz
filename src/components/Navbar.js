@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import "./Navbar.css";
 import logo from "../assets/images/PixelizLogo.jpg";
+import whatsappIcon from "../assets/images/WhatsAppButtonGreenLarge.png";
 
 const Navbar = () => {
   return (
     <div>
-      {/* Navigation Bar */}
       <nav className="navbar">
-        {/* Logo on the left */}
+        {/* ✅ LOGO (Left Side) */}
         <div className="nav-logo">
           <img src={logo} alt="Pixeliz Logo" />
         </div>
 
-        {/* Navigation Links in the center */}
+        {/* ✅ NAVIGATION LINKS (Center) */}
         <div className="nav-center">
           <ul>
             <li><ScrollLink to="home" smooth={true} duration={800}>Home</ScrollLink></li>
@@ -26,10 +26,25 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* Contact Info on the right */}
+        {/* ✅ CONTACT + SEARCH + CART (Right Side) */}
         <div className="contact-info">
-          <span className="icon">📞</span> +216-97 111 001
-          <span className="icon">✉️</span> pixeliz.tunis@gmail.com
+          <span>+216-97 111 001</span>
+          <span>pixeliz.tunis@gmail.com</span>
+          <a
+            aria-label="Chat on WhatsApp"
+            href="https://wa.me/21697111001"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="whatsapp-container"
+          >
+            <img src={whatsappIcon} alt="Chat on WhatsApp" />
+            <span>WhatsApp</span>
+          </a>
+
+       
+         
+
+        
         </div>
       </nav>
     </div>
