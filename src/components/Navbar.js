@@ -1,20 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Link as ScrollLink } from "react-scroll"; // Import react-scroll
+import { Link as ScrollLink } from "react-scroll";
 import "./Navbar.css";
-import logo from "../assets/images/PixelizLogo.jpg"; // Adjust the path if needed
+import logo from "../assets/images/PixelizLogo.jpg";
 
 const Navbar = () => {
   return (
     <div>
-      {/* Top Contact Bar */}
-      <div className="top-bar">
-        <div className="contact-info">
-          <span className="icon">📞</span> +216-97 111 001
-          <span className="icon">✉️</span> pixeliz.tunis@gmail.com
-        </div>
-      </div>
-
       {/* Navigation Bar */}
       <nav className="navbar">
         {/* Logo on the left */}
@@ -32,6 +24,12 @@ const Navbar = () => {
             <li><ScrollLink to="contact" smooth={true} duration={800}>Contact</ScrollLink></li>
             <li><Link to="/join">Join Us</Link></li>
           </ul>
+        </div>
+
+        {/* Contact Info on the right */}
+        <div className="contact-info">
+          <span className="icon">📞</span> +216-97 111 001
+          <span className="icon">✉️</span> pixeliz.tunis@gmail.com
         </div>
       </nav>
     </div>
