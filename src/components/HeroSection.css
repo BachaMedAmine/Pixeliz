@@ -1,7 +1,7 @@
 /* Main Hero Section */
 .hero {
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   position: relative;
   display: flex;
   justify-content: center;
@@ -12,21 +12,25 @@
 /* Video Container */
 .video-container {
   position: absolute;
-  width: 100%;  /* Change this if you want a smaller width */
-  height: 60vh; /* Adjust height (e.g., change 100vh to 80vh for a shorter video) */
+  width: 100%;
+  height: 60vh;
   top: 0;
   left: 0;
   overflow: hidden;
 }
 
+/* Video with Fade-in Effect */
 .video-bg {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures video covers the entire section */
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
 }
 
-.hidden {
-  display: none;
+/* Hidden class for smooth fading */
+.video-hidden {
+  opacity: 0;
 }
 
 /* Loading Spinner */
@@ -54,7 +58,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(217, 55, 6, 0.692);
   border: none;
   color: white;
   font-size: 24px;
